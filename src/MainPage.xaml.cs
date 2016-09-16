@@ -14,8 +14,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace CreateSymlink
 {
     /// <summary>
@@ -36,8 +34,8 @@ namespace CreateSymlink
         private void CreateSymlinkButton_Click(object sender, RoutedEventArgs e)
         {
             bool result = CreateSymbolicLink(
-                @"C:\hosts.txt", 
-                @"C:\Windows\System32\Drivers\Etc\Hosts", 
+                @"C:\hosts.txt",
+                @"C:\Windows\System32\Drivers\Etc\Hosts",
                 SYMBOLIC_LINK_FLAG.File);
 
             if (true == result)
@@ -49,6 +47,7 @@ namespace CreateSymlink
                 CreateSymlinksResultMessageBox.Text = "Symlink Creation Failed";
 
             }
+
         }
     }
 }
