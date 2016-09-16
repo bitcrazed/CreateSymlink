@@ -33,8 +33,13 @@ namespace CreateSymlink
 
         private void CreateSymlinkButton_Click(object sender, RoutedEventArgs e)
         {
+            const string linkFile = @"C:\Temp\hosts.txt";
+
+            // Delete the symlink if it already exists.
+            File.Delete(linkFile);
+
             bool result = CreateSymbolicLink(
-                @"C:\hosts.txt",
+                linkFile,
                 @"C:\Windows\System32\Drivers\Etc\Hosts",
                 SYMBOLIC_LINK_FLAG.File);
 
